@@ -1,6 +1,6 @@
-import { useRef, useState, useLayoutEffect, useCallback } from 'react';
-import { LinkedinLogo, GithubLogo, Envelope } from '@phosphor-icons/react';
+import { Envelope, GithubLogo, LinkedinLogo } from '@phosphor-icons/react';
 import { gsap } from 'gsap';
+import { useCallback, useLayoutEffect, useRef, useState } from 'react';
 
 const Header = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,21 +18,26 @@ const Header = () => {
 	const navItems = [
 		{ name: 'Home', href: '#home' },
 		{ name: 'About', href: '#about' },
-		{ name: 'Work', href: '#work' },
+		{ name: 'Skills', href: '#skills' },
+		{ name: 'Experience', href: '#experience' },
 	];
 
 	const socialLinks = [
 		{
 			icon: LinkedinLogo,
-			href: 'https://linkedin.com/in/leandroviana',
+			href: 'https://linkedin.com/in/leandrovianam',
 			label: 'LinkedIn',
 		},
 		{
 			icon: GithubLogo,
-			href: 'https://github.com/leandroviana',
+			href: 'https://github.com/leandrocodes',
 			label: 'GitHub',
 		},
-		{ icon: Envelope, href: 'mailto:leandro@example.com', label: 'Email' },
+		{
+			icon: Envelope,
+			href: 'mailto:leandrovianacodes@gmail.com',
+			label: 'Email',
+		},
 	];
 
 	useLayoutEffect(() => {

@@ -3,7 +3,10 @@
 @tailwind utilities;
 
 @layer base {
-  /* Default body font (paragraphs) */
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     font-family: 'Liter', sans-serif;
   }
@@ -176,5 +179,8 @@
   .bg-gradient-glass-cool {
     background: var(--gradient-glass-cool);
   }
-}
 
+  .z-5 {
+    z-index: 5;
+  }
+}

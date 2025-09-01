@@ -1,6 +1,6 @@
-import { useRef, useLayoutEffect } from 'react';
 import { DownloadIcon } from '@phosphor-icons/react';
 import { gsap } from 'gsap';
+import { useLayoutEffect, useRef } from 'react';
 import pixelImage from '../assets/pixel.jpg';
 import TextType from './TextType';
 
@@ -102,7 +102,7 @@ const Home = () => {
 
 	const handleDownloadCV = () => {
 		const link = document.createElement('a');
-		link.href = '/path-to-your-cv.pdf';
+		link.href = 'src/assets/Resume - Leandro Viana.pdf';
 		link.download = 'Leandro_Viana_CV.pdf';
 		document.body.appendChild(link);
 		link.click();
@@ -113,7 +113,7 @@ const Home = () => {
 		<section
 			id="home"
 			ref={sectionRef}
-			className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16"
+			className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-22"
 		>
 			<div className="max-w-7xl mx-auto w-full">
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -189,7 +189,7 @@ const Home = () => {
 								ref={buttonRef}
 								type="button"
 								onClick={handleDownloadCV}
-								className="inline-flex items-center gap-3 bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-liter font-medium text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 group"
+								className="inline-flex items-center gap-3 bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-liter font-medium text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 group cursor-pointer"
 							>
 								<DownloadIcon
 									size={24}
@@ -297,86 +297,42 @@ const Home = () => {
 
 							{/* Main Glass Card */}
 							<div
-								className="relative glass-card rounded-xl overflow-hidden border-2 backdrop-blur-md"
+								className="relative glass-card rounded-xl overflow-hidden border-2 backdrop-blur-md z-100"
 								style={{
 									borderColor: 'rgba(255, 212, 79, 0.6)',
 									background: 'rgba(0, 0, 0, 0.2)',
 								}}
 							>
-								{/* Enhanced Corner Brackets */}
-								<div
-									className="absolute top-2 left-2 w-8 h-8 border-l-2 border-t-2 animate-pulse"
-									style={{ borderColor: 'rgb(255, 212, 79)' }}
-								>
-									<div className="absolute -top-1 -left-1 w-2 h-2 bg-orange-400 rounded-full animate-ping opacity-75"></div>
-								</div>
-								<div
-									className="absolute top-2 right-2 w-8 h-8 border-r-2 border-t-2 animate-pulse"
-									style={{
-										borderColor: 'rgb(255, 212, 79)',
-										animationDelay: '0.5s',
-									}}
-								>
-									<div
-										className="absolute -top-1 -right-1 w-2 h-2 bg-orange-400 rounded-full animate-ping opacity-75"
-										style={{ animationDelay: '0.5s' }}
-									></div>
-								</div>
-								<div
-									className="absolute bottom-2 left-2 w-8 h-8 border-l-2 border-b-2 animate-pulse"
-									style={{
-										borderColor: 'rgb(255, 212, 79)',
-										animationDelay: '1s',
-									}}
-								>
-									<div
-										className="absolute -bottom-1 -left-1 w-2 h-2 bg-orange-400 rounded-full animate-ping opacity-75"
-										style={{ animationDelay: '1s' }}
-									></div>
-								</div>
-								<div
-									className="absolute bottom-2 right-2 w-8 h-8 border-r-2 border-b-2 animate-pulse"
-									style={{
-										borderColor: 'rgb(255, 212, 79)',
-										animationDelay: '1.5s',
-									}}
-								>
-									<div
-										className="absolute -bottom-1 -right-1 w-2 h-2 bg-orange-400 rounded-full animate-ping opacity-75"
-										style={{ animationDelay: '1.5s' }}
-									></div>
-								</div>
-
 								{/* Enhanced Status Indicators */}
-								<div className="absolute top-4 left-4 flex gap-3">
+								<div className="absolute top-4 left-4 flex gap-3 z-100">
 									<div className="flex flex-col items-center gap-1">
 										<div
-											className="w-3 h-3 rounded-full animate-pulse shadow-lg"
+											className="w-3 h-3 rounded-full  shadow-lg"
 											style={{
-												backgroundColor: 'rgb(239, 115, 86)',
-												boxShadow: '0 0 10px rgba(239, 115, 86, 0.8)',
+												backgroundColor: 'rgb(255, 45, 209)',
+												boxShadow: '0 0 10px rgba(255, 45, 209, 0.8)',
 											}}
 										></div>
 										<div className="w-1 h-4 bg-gradient-to-b from-red-400 to-transparent opacity-60"></div>
 									</div>
 									<div className="flex flex-col items-center gap-1">
 										<div
-											className="w-3 h-3 rounded-full animate-pulse shadow-lg"
+											className="w-3 h-3 rounded-full  shadow-lg"
 											style={{
-												backgroundColor: 'rgb(255, 212, 79)',
+												backgroundColor: 'rgb(253, 255, 184)',
 												animationDelay: '0.5s',
-												boxShadow: '0 0 10px rgba(255, 212, 79, 0.8)',
+												boxShadow: '0 0 10px rgba(253, 255, 184, 0.8)',
 											}}
 										></div>
 										<div className="w-1 h-4 bg-gradient-to-b from-yellow-400 to-transparent opacity-60"></div>
 									</div>
 									<div className="flex flex-col items-center gap-1">
 										<div
-											className="w-3 h-3 rounded-full animate-pulse shadow-lg"
+											className="w-3 h-3 rounded-full  shadow-lg"
 											style={{
-												backgroundColor: 'rgb(255, 193, 7)',
+												backgroundColor: 'rgb(77, 255, 190)',
 												animationDelay: '1s',
-												boxShadow: '0 0 10px rgba(255, 193, 7, 0.8)',
+												boxShadow: '0 0 10px rgba(77, 255, 190, 0.8)',
 											}}
 										></div>
 										<div className="w-1 h-4 bg-gradient-to-b from-orange-400 to-transparent opacity-60"></div>
@@ -387,6 +343,7 @@ const Home = () => {
 								<div className="absolute top-16 right-4 flex flex-col gap-1 opacity-60">
 									{Array.from({ length: 8 }).map((_, i) => (
 										<div
+											// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 											key={i}
 											className="w-12 h-0.5 bg-gradient-to-r from-transparent via-orange-400 to-transparent animate-pulse"
 											style={{
@@ -424,7 +381,7 @@ const Home = () => {
 									ref={imageRef}
 									src={pixelImage}
 									alt="Leandro Viana"
-									className="w-80 h-96 sm:w-96 sm:h-[28rem] object-cover filter contrast-110 saturate-110 relative"
+									className="w-80 h-96 sm:w-96 sm:h-[28rem] object-cover filter contrast-110 saturate-110 relative z-0"
 									style={{
 										objectPosition: 'center 70%',
 									}}
@@ -443,7 +400,7 @@ const Home = () => {
 
 								{/* Enhanced Bottom Panel */}
 								<div
-									className="absolute bottom-0 left-0 right-0 glass p-4 border-t backdrop-blur-sm"
+									className="absolute bottom-0 left-0 right-0 glass p-4 border-t backdrop-blur-sm z-10"
 									style={{
 										borderColor: 'rgba(255, 212, 79, 0.4)',
 										background: 'rgba(0, 0, 0, 0.3)',
@@ -454,16 +411,12 @@ const Home = () => {
 										style={{ color: 'rgb(255, 212, 79)' }}
 									>
 										<div className="flex items-center gap-2">
-											<span className="animate-pulse">ONLINE</span>
-											<div className="w-2 h-2 bg-green-400 rounded-full animate-ping"></div>
+											<span>ONLINE</span>
+											<div className="w-2 h-2 bg-green-400 rounded-full"></div>
 										</div>
 										<div className="flex items-center gap-2">
 											<span>ID: LV_2025</span>
 											<div className="w-1 h-4 bg-gradient-to-t from-orange-400 to-transparent animate-pulse"></div>
-										</div>
-										<div className="flex items-center gap-1">
-											<span className="animate-pulse">●</span>
-											<span className="text-[10px] opacity-60">ACTIVE</span>
 										</div>
 									</div>
 									<div className="mt-2 w-full h-1 bg-gray-800 rounded-full overflow-hidden">
@@ -477,7 +430,7 @@ const Home = () => {
 
 							{/* Enhanced Floating Elements */}
 							<div
-								className="absolute -top-8 -right-8 w-6 h-6 rounded-full animate-float shadow-2xl"
+								className="absolute -top-8 -right-8 w-6 h-6 rounded-full animate-float shadow-2xl z-100"
 								style={{
 									backgroundColor: 'rgb(255, 212, 79)',
 									boxShadow:
@@ -508,10 +461,10 @@ const Home = () => {
 							</div>
 
 							{/* Enhanced HUD Element */}
-							<div className="absolute -bottom-6 -right-6 w-20 h-20 opacity-40">
+							<div className="absolute -bottom-6 -right-6 w-20 h-20 opacity-40 z-100">
 								<svg
 									viewBox="0 0 80 80"
-									className="w-full h-full"
+									className="w-full h-full z-100"
 									style={{ color: 'rgb(255, 212, 79)' }}
 									aria-hidden="true"
 									focusable="false"
@@ -524,7 +477,7 @@ const Home = () => {
 										stroke="currentColor"
 										strokeWidth="1"
 										strokeDasharray="5,5"
-										className="animate-spin"
+										className="animate-spin z-100"
 										style={{ animationDuration: '10s' }}
 									/>
 									<path
