@@ -28,32 +28,68 @@ function App() {
 						baseRotation={2}
 						enableBlur={true}
 						blurStrength={3}
+						rotationEnd="top 40%" // Trigger rotation animation earlier
+						wordAnimationEnd="top 40%" // Trigger word animations earlier
 					>
 						About Me
 					</ScrollReveal>
 
+					{/* Split the content into multiple ScrollReveal components for better control */}
 					<ScrollReveal
-						containerClassName="max-w-full mx-auto text-left px-4 "
+						containerClassName="max-w-full mx-auto text-left px-4"
 						textClassName="text-gray-300 font-normal text-[clamp(1.2rem,2.5vw,1.8rem)] leading-relaxed [text-wrap:balance]"
 						baseOpacity={0.1}
 						baseRotation={1}
 						enableBlur={true}
 						blurStrength={2}
+						rotationEnd="top 40%" // Trigger rotation animation earlier
+						wordAnimationEnd="top 40%" // Trigger word animations earlier
 					>
 						Creating engaging, high-quality frontend applications since 2018.
-						<br />
-						<br />
+					</ScrollReveal>
+
+					<ScrollReveal
+						containerClassName="max-w-full mx-auto text-left px-4"
+						textClassName="text-gray-300 font-normal text-[clamp(1.2rem,2.5vw,1.8rem)] leading-relaxed [text-wrap:balance]"
+						baseOpacity={0.1}
+						baseRotation={1}
+						enableBlur={true}
+						blurStrength={2}
+						rotationEnd="top 40%" // Trigger rotation animation earlier
+						wordAnimationEnd="top 40%" // Trigger word animations earlier
+					>
 						Experienced in Vue and, for the past five years, specializing in
 						React and TypeScript I am skilled at collaborating with global teams
 						across Latam, Asia, EU, USA, and Canada in fast-paced consultancy
 						environments.
-						<br />
+					</ScrollReveal>
+
+					<ScrollReveal
+						containerClassName="max-w-full mx-auto text-left px-4"
+						textClassName="text-gray-300 font-normal text-[clamp(1.2rem,2.5vw,1.8rem)] leading-relaxed [text-wrap:balance]"
+						baseOpacity={0.1}
+						baseRotation={1}
+						enableBlur={true}
+						blurStrength={2}
+						rotationEnd="top 40%" // Trigger rotation animation earlier
+						wordAnimationEnd="top 40%" // Trigger word animations earlier
+					>
 						Very passionate about crafting visually appealing, user-focused
 						solutions. Love working with designers to turn ideas into
 						pixel-perfect interfaces, experimenting with colors, borders,
 						curves, and animations.
-						<br />
-						<br />
+					</ScrollReveal>
+
+					<ScrollReveal
+						containerClassName="max-w-full mx-auto text-left px-4"
+						textClassName="text-gray-300 font-normal text-[clamp(1.2rem,2.5vw,1.8rem)] leading-relaxed [text-wrap:balance]"
+						baseOpacity={0.1}
+						baseRotation={1}
+						enableBlur={true}
+						blurStrength={2}
+						rotationEnd="top 40%" // Trigger rotation animation earlier
+						wordAnimationEnd="top 40%" // Trigger word animations earlier
+					>
 						Team-oriented, creative, and adaptable—if it's collaborative, I'm
 						all in.
 					</ScrollReveal>

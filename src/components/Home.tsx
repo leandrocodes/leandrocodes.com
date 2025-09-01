@@ -39,7 +39,7 @@ const Home = () => {
 
 		gsap.set(imageEl, {
 			opacity: 0,
-			scale: 0.9,
+			scale: 3.0,
 			rotation: -5,
 		});
 
@@ -87,7 +87,7 @@ const Home = () => {
 			imageEl,
 			{
 				opacity: 1,
-				scale: 1,
+				scale: 1.5,
 				rotation: 0,
 				duration: 0.8,
 				ease: 'power3.out',
@@ -381,9 +381,9 @@ const Home = () => {
 									ref={imageRef}
 									src={pixelImage}
 									alt="Leandro Viana"
-									className="w-80 h-96 sm:w-96 sm:h-[28rem] object-cover filter contrast-110 saturate-110 relative z-0"
+									className="w-80 h-96 sm:w-96 sm:h-[28rem] object-cover relative z-0 scale-200"
 									style={{
-										objectPosition: 'center 70%',
+										objectPosition: 'center 40%',
 									}}
 								/>
 
