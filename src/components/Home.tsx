@@ -1,12 +1,9 @@
-import { DownloadIcon, Envelope, Cpu, Globe, ChartBar } from '@phosphor-icons/react';
+import { DownloadIcon, Cpu, Globe, ChartBar } from '@phosphor-icons/react';
 import pixelImage from '../assets/pixel.jpg';
+import resumePDF from '../assets/Leandro Viana - Resume CV.pdf';
 import TextType from './TextType';
 
 const Home = () => {
-	const handleDownloadCV = () => {
-		window.open('https://github.com/leandrovianam', '_blank');
-	};
-
 	return (
 		<section
 			id="home"
@@ -58,6 +55,17 @@ const Home = () => {
 						>
 							start a new project
 						</a>
+						<a
+							href={resumePDF}
+							download="Leandro-Viana-Resume.pdf"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="glass-card px-8 py-3 rounded-xl font-bold hover:bg-white/5 transition-all text-white/90 flex items-center gap-2 group border-beam-container cursor-pointer"
+						>
+							<div className="border-beam" />
+							<DownloadIcon size={20} weight="bold" className="text-[#ffb700] group-hover:animate-bounce" />
+							Download CV
+						</a>
 					</div>
 				</div>
 			</div>
@@ -82,10 +90,12 @@ const Home = () => {
 				</div>
 
 				{/* Global Reach (1 Column) */}
-				<button 
-					type="button"
-					onClick={handleDownloadCV}
-					className="glass-card p-8 flex flex-col justify-between group text-left border border-white/5 hover:border-[#ffb700]/30 transition-all relative overflow-hidden border-beam-container"
+				<a 
+					href={resumePDF}
+					download="Leandro-Viana-Resume.pdf"
+					target="_blank"
+					rel="noopener noreferrer"
+					className="glass-card p-8 flex flex-col justify-between group text-left border border-white/5 hover:border-[#ffb700]/30 transition-all relative overflow-hidden border-beam-container cursor-pointer"
 				>
 					<div className="border-beam" />
 					<div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
@@ -101,7 +111,7 @@ const Home = () => {
 							<p className="text-[10px] font-bold text-white/40 uppercase tracking-widest">Worldwide Teams</p>
 						</div>
 					</div>
-				</button>
+				</a>
 
 				{/* Mass Impact (1 Column) */}
 				<div className="glass-card p-8 flex flex-col justify-between group bg-white/[0.01] border border-white/5 hover:border-[#ffb700]/30 transition-all relative overflow-hidden border-beam-container">
