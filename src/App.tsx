@@ -102,8 +102,8 @@ function App() {
 						</div>
 						<div className="md:w-3/4">
 							<div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-								<div className="glass-card p-10 border-[#ffb700]/10 hover:border-[#ffb700]/30 transition-all group border-beam-container">
-									<div className="border-beam" />
+								<div className="glass-card p-10 border-[#ffb700]/10 hover:border-[#ffb700]/30 transition-all group snake-border-container">
+									<svg className="snake-border-svg"><title>Border Trail</title><rect x="0" y="0" width="100%" height="100%" rx="16" fill="none" pathLength="1" className="snake-path" /></svg>
 									<h3 className="text-[10px] font-mono font-bold text-[#ffb700] mb-8 uppercase tracking-[0.4em] flex items-center gap-3">
 										<div className="w-1.5 h-1.5 rounded-full bg-[#ffb700] shadow-[0_0_8px_#ffb700]" />
 										Architecture
@@ -126,8 +126,8 @@ function App() {
 										))}
 									</div>
 								</div>
-								<div className="glass-card p-10 border-[#bc42f5]/10 hover:border-[#bc42f5]/30 transition-all group border-beam-container">
-									<div className="border-beam violet-beam" />
+								<div className="glass-card p-10 border-[#bc42f5]/10 hover:border-[#bc42f5]/30 transition-all group snake-border-container">
+									<svg className="snake-border-svg"><title>Border Trail</title><rect x="0" y="0" width="100%" height="100%" rx="16" fill="none" pathLength="1" className="snake-path violet-snake" /></svg>
 									<h3 className="text-[10px] font-mono font-bold text-[#bc42f5] mb-8 uppercase tracking-[0.4em] flex items-center gap-3">
 										<div className="w-1.5 h-1.5 rounded-full bg-[#bc42f5] shadow-[0_0_8px_#bc42f5]" />
 										Engineering
@@ -233,8 +233,8 @@ function App() {
 										<div className="w-1 h-1 bg-white opacity-20 group-hover:opacity-100 transition-opacity" />
 									</div>
 
-									<div className="glass-card p-10 group-hover:bg-white/[0.04] transition-all border-white/5 border-beam-container">
-										<div className="border-beam" />
+									<div className="glass-card p-10 group-hover:bg-white/[0.04] transition-all border-white/5 snake-border-container">
+										<svg className="snake-border-svg"><title>Border Trail</title><rect x="0" y="0" width="100%" height="100%" rx="16" fill="none" pathLength="1" className="snake-path" /></svg>
 										<div className="flex flex-col sm:flex-row justify-between sm:items-center mb-6 gap-4">
 											<h3 className="text-3xl font-black text-white tracking-tight">
 												{job.company}
@@ -269,8 +269,8 @@ function App() {
 					id="contact"
 					className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 border-t border-white/5"
 				>
-					<div className="glass-card p-20 text-center overflow-hidden relative shadow-2xl border-beam-container">
-						<div className="border-beam" />
+					<div className="glass-card p-20 text-center overflow-hidden relative shadow-2xl snake-border-container">
+						<svg className="snake-border-svg"><title>Border Trail</title><rect x="0" y="0" width="100%" height="100%" rx="16" fill="none" pathLength="1" className="snake-path" /></svg>
 						<div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#ffb700]/10 blur-[140px] rounded-full -translate-y-1/2 translate-x-1/2" />
 						<div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-white/[0.03] blur-[140px] rounded-full translate-y-1/2 -translate-x-1/2" />
 						

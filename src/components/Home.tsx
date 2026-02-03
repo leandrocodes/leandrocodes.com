@@ -60,9 +60,9 @@ const Home = () => {
 							download="Leandro-Viana-Resume.pdf"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="glass-card px-8 py-3 rounded-xl font-bold hover:bg-white/5 transition-all text-white/90 flex items-center gap-2 group border-beam-container cursor-pointer"
+							className="glass-card px-8 py-3 rounded-xl font-bold hover:bg-white/5 transition-all text-white/90 flex items-center gap-2 group snake-border-container cursor-pointer"
 						>
-							<div className="border-beam" />
+							<svg className="snake-border-svg"><title>Border Trail</title><rect x="0" y="0" width="100%" height="100%" rx="12" fill="none" pathLength="1" className="snake-path" /></svg>
 							<DownloadIcon size={20} weight="bold" className="text-[#ffb700] group-hover:animate-bounce" />
 							Download CV
 						</a>
@@ -73,8 +73,8 @@ const Home = () => {
 			{/* 2026 Bento Diagnostics Panel */}
 			<div className="grid grid-cols-1 md:grid-cols-4 gap-6 pt-12 border-t border-white/5">
 				{/* Main Architectural Highlight (Spans 2 columns) */}
-				<div className="md:col-span-2 glass-card p-8 group relative overflow-hidden border border-white/5 hover:border-[#ffb700]/30 transition-all border-beam-container">
-					<div className="border-beam" />
+				<div className="md:col-span-2 glass-card p-8 group relative overflow-hidden border border-white/5 hover:border-[#ffb700]/30 transition-all snake-border-container">
+					<svg className="snake-border-svg"><title>Border Trail</title><rect x="0" y="0" width="100%" height="100%" rx="16" fill="none" pathLength="1" className="snake-path" /></svg>
 					<div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
 						<Cpu size={120} weight="thin" />
 					</div>
@@ -95,9 +95,9 @@ const Home = () => {
 					download="Leandro-Viana-Resume.pdf"
 					target="_blank"
 					rel="noopener noreferrer"
-					className="glass-card p-8 flex flex-col justify-between group text-left border border-white/5 hover:border-[#ffb700]/30 transition-all relative overflow-hidden border-beam-container cursor-pointer"
+					className="glass-card p-8 flex flex-col justify-between group text-left border border-white/5 hover:border-[#ffb700]/30 transition-all relative overflow-hidden snake-border-container cursor-pointer"
 				>
-					<div className="border-beam" />
+					<svg className="snake-border-svg"><title>Border Trail</title><rect x="0" y="0" width="100%" height="100%" rx="16" fill="none" pathLength="1" className="snake-path" /></svg>
 					<div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
 						<Globe size={60} weight="thin" />
 					</div>
@@ -113,9 +113,8 @@ const Home = () => {
 					</div>
 				</a>
 
-				{/* Mass Impact (1 Column) */}
-				<div className="glass-card p-8 flex flex-col justify-between group bg-white/[0.01] border border-white/5 hover:border-[#ffb700]/30 transition-all relative overflow-hidden border-beam-container">
-					<div className="border-beam" />
+				<div className="glass-card p-8 flex flex-col justify-between group bg-white/[0.01] border border-white/5 hover:border-[#ffb700]/30 transition-all relative overflow-hidden snake-border-container">
+					<svg className="snake-border-svg"><title>Border Trail</title><rect x="0" y="0" width="100%" height="100%" rx="16" fill="none" pathLength="1" className="snake-path" /></svg>
 					<div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
 						<ChartBar size={60} weight="thin" />
 					</div>

@@ -150,60 +150,44 @@
     50% { opacity: 0.8; filter: drop-shadow(0 0 12px rgba(255, 183, 0, 0.7)); }
   }
 
-  /* Snake Border (Border Beam) System - High Fidelity */
-  .border-beam-container {
+  /* Nokia Snake Border System - Normalized & Stable */
+  .snake-border-container {
     position: relative;
     z-index: 0;
   }
 
-  .border-beam {
-    pointer-events: none;
+  .snake-border-svg {
     position: absolute;
     inset: 0;
-    z-index: 5;
-    border-radius: inherit;
-    padding: 1px;
-    
-    /* Standard Masking */
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask-composite: exclude;
-    
-    /* Webkit-Specific Masking (Chrome/Safari) */
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: destination-out;
-    
-    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+    overflow: visible;
     opacity: 0;
     transition: opacity 0.4s ease;
   }
 
-  .border-beam-container:hover .border-beam {
+  .snake-border-container:hover .snake-border-svg {
     opacity: 1;
   }
 
-  .border-beam::before {
-    content: "";
-    position: absolute;
-    aspect-ratio: 1;
-    width: 200%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: conic-gradient(
-      from 0deg, 
-      transparent 0 90%, 
-      var(--beam-color, #ffb700) 100%
-    );
-    animation: border-beam-rotate 4s linear infinite;
+  .snake-path {
+    stroke-dasharray: 0.15 0.85; /* Dash (0.15) + Gap (0.85) = 1.0 total length */
+    stroke-dashoffset: 0;
+    animation: snake-crawl 3s linear infinite;
+    stroke: var(--snake-color, #ffb700);
+    stroke-width: 1.5;
+    stroke-linecap: round;
   }
 
-  @keyframes border-beam-rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+  @keyframes snake-crawl {
+    from { stroke-dashoffset: 1; }
+    to { stroke-dashoffset: 0; }
   }
 
-  .violet-beam {
-    --beam-color: #bc42f5;
+  .violet-snake {
+    --snake-color: #bc42f5;
   }
 }
 
