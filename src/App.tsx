@@ -4,384 +4,299 @@ import ScrollReveal from './components/ScrollReveal';
 
 function App() {
 	return (
-		<div className="min-h-screen bg-gradient-glass-primary relative overflow-hidden">
-			<div className="absolute inset-0 bg-gradient-glass-cool opacity-20 animate-pulse"></div>
-			<div className="absolute inset-0 bg-gradient-glass-warm opacity-15"></div>
-
+		<div className="min-h-screen bg-canvas-default text-fg-default font-inter selection:bg-orange-500/30">
 			{/* Header */}
 			<Header />
 
-			{/* Home Section */}
-			<Home />
+			<main className="pb-24">
+				{/* Home Section (Hero) */}
+				<Home />
 
-			{/* About Section with ScrollReveal */}
-			<section
-				id="about"
-				className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8"
-			>
-				<div className="max-w-3/4 mx-auto text-center space-y-16">
-					<ScrollReveal
-						as="h2"
-						containerClassName="text-center"
-						textClassName="text-orange-500 font-bold"
-						baseOpacity={0.2}
-						baseRotation={2}
-						enableBlur={true}
-						blurStrength={3}
-						rotationEnd="top 40%" // Trigger rotation animation earlier
-						wordAnimationEnd="top 40%" // Trigger word animations earlier
-					>
-						About Me
-					</ScrollReveal>
-
-					{/* Split the content into multiple ScrollReveal components for better control */}
-					<ScrollReveal
-						containerClassName="max-w-full mx-auto text-left px-4"
-						textClassName="text-gray-300 font-normal text-[clamp(1.2rem,2.5vw,1.8rem)] leading-relaxed [text-wrap:balance]"
-						baseOpacity={0.1}
-						baseRotation={1}
-						enableBlur={true}
-						blurStrength={2}
-						rotationEnd="top 40%" // Trigger rotation animation earlier
-						wordAnimationEnd="top 40%" // Trigger word animations earlier
-					>
-						Creating engaging, high-quality frontend applications since 2018.
-					</ScrollReveal>
-
-					<ScrollReveal
-						containerClassName="max-w-full mx-auto text-left px-4"
-						textClassName="text-gray-300 font-normal text-[clamp(1.2rem,2.5vw,1.8rem)] leading-relaxed [text-wrap:balance]"
-						baseOpacity={0.1}
-						baseRotation={1}
-						enableBlur={true}
-						blurStrength={2}
-						rotationEnd="top 40%" // Trigger rotation animation earlier
-						wordAnimationEnd="top 40%" // Trigger word animations earlier
-					>
-						Experienced in Vue and, for the past five years, specializing in
-						React and TypeScript I am skilled at collaborating with global teams
-						across Latam, Asia, EU, USA, and Canada in fast-paced consultancy
-						environments.
-					</ScrollReveal>
-
-					<ScrollReveal
-						containerClassName="max-w-full mx-auto text-left px-4"
-						textClassName="text-gray-300 font-normal text-[clamp(1.2rem,2.5vw,1.8rem)] leading-relaxed [text-wrap:balance]"
-						baseOpacity={0.1}
-						baseRotation={1}
-						enableBlur={true}
-						blurStrength={2}
-						rotationEnd="top 40%" // Trigger rotation animation earlier
-						wordAnimationEnd="top 40%" // Trigger word animations earlier
-					>
-						Very passionate about crafting visually appealing, user-focused
-						solutions. Love working with designers to turn ideas into
-						pixel-perfect interfaces, experimenting with colors, borders,
-						curves, and animations.
-					</ScrollReveal>
-
-					<ScrollReveal
-						containerClassName="max-w-full mx-auto text-left px-4"
-						textClassName="text-gray-300 font-normal text-[clamp(1.2rem,2.5vw,1.8rem)] leading-relaxed [text-wrap:balance]"
-						baseOpacity={0.1}
-						baseRotation={1}
-						enableBlur={true}
-						blurStrength={2}
-						rotationEnd="top 40%" // Trigger rotation animation earlier
-						wordAnimationEnd="top 40%" // Trigger word animations earlier
-					>
-						Team-oriented, creative, and adaptable—if it's collaborative, I'm
-						all in.
-					</ScrollReveal>
-				</div>
-			</section>
-
-			{/* Skills Section */}
-			<section
-				id="skills"
-				className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8"
-			>
-				<div className="max-w-6xl mx-auto space-y-20">
-					<ScrollReveal
-						as="h2"
-						containerClassName="text-center"
-						textClassName="text-orange-500 font-bold"
-						baseOpacity={0.2}
-						baseRotation={-2}
-						enableBlur={true}
-						blurStrength={4}
-					>
-						My Skills & Expertise
-					</ScrollReveal>
-
-					<div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-						<div>
-							<ScrollReveal
-								as="h3"
-								containerClassName="mb-8"
-								textClassName="text-white font-semibold text-[clamp(1.4rem,3vw,2.2rem)]"
-								baseOpacity={0.15}
-								baseRotation={1.5}
-								enableBlur={true}
-							>
-								Frontend Technologies
-							</ScrollReveal>
-
-							<ScrollReveal
-								containerClassName="space-y-4"
-								textClassName="text-gray-300 font-normal text-[clamp(1rem,2vw,1.4rem)]"
-								baseOpacity={0.1}
-								baseRotation={0.5}
-								enableBlur={true}
-								blurStrength={2}
-							>
-								React, TypeScript, Next.js, Tailwind CSS, GSAP, Three.js, and
-								modern JavaScript frameworks that bring ideas to life. Quality
-								assurance with Jest, Vitest and Playwright.
-							</ScrollReveal>
+				{/* Architectural Protocol (About) */}
+				<section
+					id="about"
+					className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-white/5"
+				>
+					<div className="flex flex-col md:flex-row gap-16">
+						<div className="md:w-1/4">
+							<h2 className="text-xl font-black text-white sticky top-24 uppercase tracking-[0.3em] leading-tight">
+								Protocol<br />
+								<span className="text-[#ffb700] text-sm font-mono tracking-widest opacity-80">
+									[ 01:SUMMARY ]
+								</span>
+							</h2>
 						</div>
-
-						<div>
-							<ScrollReveal
-								as="h3"
-								containerClassName="mb-8"
-								textClassName="text-white font-semibold text-[clamp(1.4rem,3vw,2.2rem)]"
-								baseOpacity={0.15}
-								baseRotation={-1.5}
-								enableBlur={true}
-							>
-								Design & Animation
+						<div className="md:w-3/4 grid grid-cols-1 md:grid-cols-2 gap-8">
+							<ScrollReveal baseOpacity={0} baseRotation={0} enableBlur={false}>
+								<div className="space-y-4">
+									<div className="text-[10px] font-mono text-[#ffb700] uppercase tracking-[0.4em] mb-2 flex items-center gap-2">
+										<span className="w-1 h-1 bg-[#ffb700] rounded-full" />
+										Core Foundation
+									</div>
+									<p className="text-sm text-white/50 leading-relaxed font-light">
+										Operating at the intersection of logic and aesthetics since 2018. 
+										Specialized in building <span className="text-white">resilient frontend architectures</span> 
+										using React and TypeScript as primary delivery vectors.
+									</p>
+								</div>
 							</ScrollReveal>
 
-							<ScrollReveal
-								containerClassName="space-y-4"
-								textClassName="text-gray-300 font-normal text-[clamp(1rem,2vw,1.4rem)]"
-								baseOpacity={0.1}
-								baseRotation={-0.5}
-								enableBlur={true}
-								blurStrength={2}
-							>
-								Creating smooth animations, responsive designs, and intuitive
-								user interfaces that engage and delight users with Figma &
-								Storybook.
+							<ScrollReveal baseOpacity={0} baseRotation={0} enableBlur={false}>
+								<div className="space-y-4">
+									<div className="text-[10px] font-mono text-[#ffb700] uppercase tracking-[0.4em] mb-2 flex items-center gap-2">
+										<span className="w-1 h-1 bg-[#ffb700] rounded-full" />
+										Global Operation
+									</div>
+									<p className="text-sm text-white/50 leading-relaxed font-light">
+										Consulting for market leaders across <span className="text-white">four continents</span>. 
+										Navigating complex micro-frontend clusters and delivering high-scale 
+										solutions for millions of concurrent users.
+									</p>
+								</div>
+							</ScrollReveal>
+
+							<ScrollReveal baseOpacity={0} baseRotation={0} enableBlur={false}>
+								<div className="space-y-4">
+									<div className="text-[10px] font-mono text-[#ffb700] uppercase tracking-[0.4em] mb-2 flex items-center gap-2">
+										<span className="w-1 h-1 bg-[#ffb700] rounded-full" />
+										Technical Bridge
+									</div>
+									<p className="text-sm text-white/50 leading-relaxed font-light">
+										Transforming high-fidelity design visions into 
+										<span className="text-white"> performant technical reality</span>. 
+										Focusing on Server-Driven UI (SDUI) to normalize complex 
+										enterprise ecosystems.
+									</p>
+								</div>
+							</ScrollReveal>
+
+							<ScrollReveal baseOpacity={0} baseRotation={0} enableBlur={false}>
+								<div className="space-y-4">
+									<div className="text-[10px] font-mono text-[#ffb700] uppercase tracking-[0.4em] mb-2 flex items-center gap-2">
+										<span className="w-1 h-1 bg-[#ffb700] rounded-full" />
+										Current Vector
+									</div>
+									<p className="text-sm text-white/50 leading-relaxed font-light">
+										Based in Brazil, collaborating with Tier-1 global teams to architect 
+										the future of web-based <span className="text-white">enterprise platforms</span>.
+									</p>
+								</div>
 							</ScrollReveal>
 						</div>
 					</div>
-				</div>
-			</section>
+				</section>
 
-			{/* Experience Section */}
-			<section
-				id="experience"
-				className="min-h-screen flex items-center justify-center px-6 sm:px-8 lg:px-10 pt-16"
-			>
-				<div className="max-w-4xl mx-auto text-center space-y-16">
-					<ScrollReveal
-						as="h2"
-						containerClassName="text-center"
-						textClassName="text-orange-500 font-bold"
-						baseOpacity={0.2}
-						baseRotation={3}
-						enableBlur={true}
-						blurStrength={5}
-					>
-						Professional Experience
-					</ScrollReveal>
-
-					<ScrollReveal
-						containerClassName="text-center"
-						textClassName="text-gray-300 font-normal text-[clamp(1.2rem,2.5vw,1.8rem)]"
-						baseOpacity={0.1}
-						baseRotation={-1}
-						enableBlur={true}
-						blurStrength={3}
-					>
-						My journey through companies where I've contributed my frontend
-						expertise.
-					</ScrollReveal>
-
-					<div className="grid grid-cols-1 gap-8 mt-12">
-						<ScrollReveal
-							containerClassName="bg-gradient-to-r from-gray-900/50 to-gray-800/50 rounded-lg p-6 text-left border-l-4 border-[#fab9ff]"
-							textClassName="text-gray-300 font-normal"
-							baseOpacity={0.1}
-							baseRotation={1}
-							enableBlur={true}
-							blurStrength={2}
-						>
-							<h3 className="text-white text-xl font-semibold mb-2 word">
-								CI&T
-							</h3>
-							<p className="text-[#fab9ff] mb-4 word">
-								Senior Frontend Software Engineer
-							</p>
-							<p className="text-gray-400 text-sm mb-4 word">
-								October 2023 - Present (2 years)
-							</p>
-							<p className="word">
-								Leading frontend development with React and TypeScript for
-								top-notch enterprise clients.
-							</p>
-						</ScrollReveal>
-
-						<ScrollReveal
-							containerClassName="bg-gradient-to-r from-gray-900/50 to-gray-800/50 rounded-lg p-6 text-left border-l-4 border-[#ff3d03]"
-							textClassName="text-gray-300 font-normal"
-							baseOpacity={0.1}
-							baseRotation={1}
-							enableBlur={true}
-							blurStrength={2}
-						>
-							<h3 className="text-white text-xl font-semibold mb-2 word">
-								nstech
-							</h3>
-							<p className="text-[#ff3d03] mb-4 word">
-								Senior Frontend Software Engineer
-							</p>
-							<p className="text-gray-400 text-sm mb-4 word">
-								April 2023 - September 2023 (6 months)
-							</p>
-							<p className="word">
-								Specialized in insurance market solutions using modern
-								micro-frontend technologies.
-							</p>
-						</ScrollReveal>
-
-						<ScrollReveal
-							containerClassName="bg-gradient-to-r from-gray-900/50 to-gray-800/50 rounded-lg p-6 text-left border-l-4 border-[#bd4257]"
-							textClassName="text-gray-300 font-normal"
-							baseOpacity={0.1}
-							baseRotation={1}
-							enableBlur={true}
-							blurStrength={2}
-						>
-							<h3 className="text-white text-xl font-semibold mb-2 word">
-								Thoughtworks
-							</h3>
-							<p className="text-[#bd4257] mb-4 word">
-								Frontend Software Engineer
-							</p>
-							<p className="text-gray-400 text-sm mb-4 word">
-								December 2021 - February 2023 (1 year 3 months)
-							</p>
-							<p className="word">
-								Worked as a consultant with leading companies around the world.
-								We delivered not only code, but amazing experiences and products
-								built with React in a microfrontends architecture.
-							</p>
-						</ScrollReveal>
-
-						<ScrollReveal
-							containerClassName="bg-gradient-to-r from-gray-900/50 to-gray-800/50 rounded-lg p-6 text-left border-l-4 border-orange-700"
-							textClassName="text-gray-300 font-normal"
-							baseOpacity={0.1}
-							baseRotation={1}
-							enableBlur={true}
-							blurStrength={2}
-						>
-							<h3 className="text-white text-xl font-semibold mb-2 word">
-								Before
-							</h3>
-							<p className="text-orange-700 mb-4 word">
-								Frontend Software Engineer
-							</p>
-							<p className="text-gray-400 text-sm mb-4 word">
-								June 2020 - December 2021 (1 year 7 months)
-							</p>
-							<p className="word">
-								Development and architecture of new projects, using Vue.js (v3),
-								Next.js and React Native. Integrations with major
-								telecommunication companies.
-							</p>
-						</ScrollReveal>
-
-						<ScrollReveal
-							containerClassName="bg-gradient-to-r from-gray-900/50 to-gray-800/50 rounded-lg p-6 text-left border-l-4 border-green-500"
-							textClassName="text-gray-300 font-normal"
-							baseOpacity={0.1}
-							baseRotation={1}
-							enableBlur={true}
-							blurStrength={2}
-						>
-							<h3 className="text-white text-xl font-semibold mb-2 word">
-								Xekout Group
-							</h3>
-							<p className="text-green-400 mb-4 word">Front End Developer</p>
-							<p className="text-gray-400 text-sm mb-4 word">
-								January 2020 - June 2020 (6 months)
-							</p>
-							<p className="word">
-								Built e-commerce solutions and custom shopping experiences with
-								Vuex, Vuetify and Nuxt.
-							</p>
-						</ScrollReveal>
-
-						<ScrollReveal
-							containerClassName="bg-gradient-to-r from-gray-900/50 to-gray-800/50 rounded-lg p-6 text-left border-l-4 border-purple-600"
-							textClassName="text-gray-300 font-normal"
-							baseOpacity={0.1}
-							baseRotation={1}
-							enableBlur={true}
-							blurStrength={2}
-						>
-							<h3 className="text-white text-xl font-semibold mb-2 word">
-								Agência Vmais
-							</h3>
-							<p className="text-purple-600 mb-4 word">Front End Developer</p>
-							<p className="text-gray-400 text-sm mb-4 word">
-								January 2018 - January 2020 (3 years)
-							</p>
-							<p className="word">
-								Created engaging web experiences and interactive websites for
-								various clients.
-							</p>
-						</ScrollReveal>
+				{/* Technical Manifest (Skills) */}
+				<section
+					id="skills"
+					className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 border-t border-white/5"
+				>
+					<div className="flex flex-col md:flex-row gap-16">
+						<div className="md:w-1/4">
+							<h2 className="text-xl font-black text-white sticky top-24 uppercase tracking-[0.3em] leading-tight">
+								Manifest<br />
+								<span className="text-[#ffb700] text-sm font-mono tracking-widest opacity-80">
+									[ 02:EXPERTISE ]
+								</span>
+							</h2>
+						</div>
+						<div className="md:w-3/4">
+							<div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+								<div className="glass-card p-10 border-[#ffb700]/10 hover:border-[#ffb700]/30 transition-all group border-beam-container">
+									<div className="border-beam" />
+									<h3 className="text-[10px] font-mono font-bold text-[#ffb700] mb-8 uppercase tracking-[0.4em] flex items-center gap-3">
+										<div className="w-1.5 h-1.5 rounded-full bg-[#ffb700] shadow-[0_0_8px_#ffb700]" />
+										Architecture
+									</h3>
+									<div className="flex flex-wrap gap-2">
+										{[
+											'Micro-frontends',
+											'Server-Driven UI',
+											'FSD Pattern',
+											'Design Systems',
+											'Clean Architecture',
+											'DDD Foundations',
+										].map((s) => (
+											<span
+												key={s}
+												className="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider bg-white/5 border border-white/5 rounded-lg text-white/50 group-hover:text-white/80 transition-colors"
+											>
+												{s}
+											</span>
+										))}
+									</div>
+								</div>
+								<div className="glass-card p-10 border-[#bc42f5]/10 hover:border-[#bc42f5]/30 transition-all group border-beam-container">
+									<div className="border-beam violet-beam" />
+									<h3 className="text-[10px] font-mono font-bold text-[#bc42f5] mb-8 uppercase tracking-[0.4em] flex items-center gap-3">
+										<div className="w-1.5 h-1.5 rounded-full bg-[#bc42f5] shadow-[0_0_8px_#bc42f5]" />
+										Engineering
+									</h3>
+									<div className="flex flex-wrap gap-2">
+										{[
+											'React',
+											'TypeScript',
+											'Next.js',
+											'Performance Opt.',
+											'Unit/E2E Testing',
+											'CI/CD Pipelines',
+										].map((s) => (
+											<span
+												key={s}
+												className="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider bg-white/5 border border-white/5 rounded-lg text-white/40 group-hover:text-[#bc42f5] group-hover:border-[#bc42f5]/30 transition-all duration-300"
+											>
+												{s}
+											</span>
+										))}
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
-				</div>
-			</section>
+				</section>
 
-			{/* Contact Section */}
-			<section
-				id="contact"
-				className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8"
-			>
-				<div className="max-w-4xl mx-auto text-center space-y-16">
-					<ScrollReveal
-						as="h2"
-						containerClassName="text-center"
-						textClassName="text-white font-bold"
-						baseOpacity={0.2}
-						baseRotation={-2}
-						enableBlur={true}
-						blurStrength={4}
-					>
-						Let's Work Together
-					</ScrollReveal>
+				{/* Career Chronology */}
+				<section
+					id="experience"
+					className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 border-t border-white/5"
+				>
+					<div className="flex flex-col md:flex-row gap-16">
+						<div className="md:w-1/4">
+							<h2 className="text-xl font-black text-white sticky top-24 uppercase tracking-[0.3em] leading-tight">
+								Archive<br />
+								<span className="text-[#ffb700] text-sm font-mono tracking-widest opacity-80">
+									[ 03:CHRONOLOGY ]
+								</span>
+							</h2>
+						</div>
+						<div className="md:w-3/4 space-y-12">
+							{[
+								{
+									company: 'CI&T',
+									role: 'Senior Frontend Engineer',
+									period: '2023 - PRESENT',
+									tasks: [
+										'Leading development for large-scale enterprise React apps',
+										'Architecting and implementing Server-Driven UI (SDUI) solutions for cross-platform consistency',
+										'Architecting design systems for cross-team consistency',
+									],
+								},
+								{
+									company: 'NSTECH',
+									role: 'Senior Frontend Engineer',
+									period: '2023',
+									tasks: [
+										'Delivered micro-frontend solutions for logistics tech',
+										'Optimized build performance and developer experience',
+									],
+								},
+								{
+									company: 'THOUGHTWORKS',
+									role: 'Frontend Engineer',
+									period: '2021 - 2023',
+									tasks: [
+										'Global consulting for Tier-1 technology companies',
+										'Championed accessibility and TDD best practices in micro-frontend architectures',
+									],
+								},
+								{
+									company: 'BEFORE',
+									role: 'Frontend Software Engineer',
+									period: '2020 - 2021',
+									tasks: [
+										'Architeting new projects with Vue.js, Next.js, and React Native',
+										'Engineered critical integrations for major telecommunications leaders',
+									],
+								},
+								{
+									company: 'XEKOUT GROUP',
+									role: 'Front End Developer',
+									period: '2020',
+									tasks: [
+										'Engineered e-commerce solutions and custom checkout experiences',
+										'Specialized in Vue.js, Vuetify and Nuxt ecosystems',
+									],
+								},
+								{
+									company: 'AGÊNCIA VMAIS',
+									role: 'Front End Developer',
+									period: '2018 - 2019',
+									tasks: [
+										'Crafted high-fidelity web experiences and interactive platforms',
+										'Bridge between design concepts and technical implementation',
+									],
+								},
+							].map((job) => (
+								<div key={job.company} className="relative pl-12 group">
+									<div className="absolute left-[11px] top-[14px] bottom-0 w-px bg-white/5 group-last:hidden" />
+									<div className="absolute left-0 top-[6px] w-6 h-6 rounded-full border border-white/10 bg-black group-hover:border-[#ffb700] group-hover:shadow-[0_0_12px_rgba(255,183,0,0.4)] transition-all flex items-center justify-center">
+										<div className="w-1 h-1 bg-white opacity-20 group-hover:opacity-100 transition-opacity" />
+									</div>
 
-					<ScrollReveal
-						containerClassName="text-center"
-						textClassName="text-gray-300 font-normal text-[clamp(1.2rem,2.5vw,1.8rem)]"
-						baseOpacity={0.1}
-						baseRotation={1}
-						enableBlur={true}
-						blurStrength={2}
-					>
-						Ready to bring your ideas to life? Let's create something amazing
-						together.
-					</ScrollReveal>
-
-					<div className="pt-8">
-						<button
-							type="button"
-							className="cursor-pointer inline-flex items-center gap-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 rounded-lg font-medium text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25"
-						>
-							Get In Touch
-						</button>
+									<div className="glass-card p-10 group-hover:bg-white/[0.04] transition-all border-white/5 border-beam-container">
+										<div className="border-beam" />
+										<div className="flex flex-col sm:flex-row justify-between sm:items-center mb-6 gap-4">
+											<h3 className="text-3xl font-black text-white tracking-tight">
+												{job.company}
+											</h3>
+											<span className="text-[10px] font-mono font-bold text-white/30 bg-white/5 px-3 py-1 rounded-md border border-white/10 tracking-[0.2em]">
+												{job.period}
+											</span>
+										</div>
+										<p className="text-[#ffb700] text-[10px] font-bold uppercase tracking-[0.3em] mb-8">
+											{job.role}
+										</p>
+										<ul className="space-y-4">
+											{job.tasks.map((task) => (
+												<li
+													key={task}
+													className="text-sm text-white/50 flex items-start gap-5 font-light leading-relaxed"
+												>
+													<span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#ffb700] shrink-0 shadow-[0_0_8px_#ffb700]" />
+													{task}
+												</li>
+											))}
+										</ul>
+									</div>
+								</div>
+							))}
+						</div>
 					</div>
-				</div>
-			</section>
+				</section>
+
+				{/* Final Call to Action */}
+				<section
+					id="contact"
+					className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 border-t border-white/5"
+				>
+					<div className="glass-card p-20 text-center overflow-hidden relative shadow-2xl border-beam-container">
+						<div className="border-beam" />
+						<div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#ffb700]/10 blur-[140px] rounded-full -translate-y-1/2 translate-x-1/2" />
+						<div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-white/[0.03] blur-[140px] rounded-full translate-y-1/2 -translate-x-1/2" />
+						
+						<h2 className="text-5xl font-black text-white mb-8 tracking-tighter uppercase leading-[0.9] max-w-2xl mx-auto">
+							INITIATE DIGITAL <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffb700] to-white/60">COLLABORATION</span>
+						</h2>
+						<p className="text-lg text-white/40 max-w-xl mx-auto mb-12 font-light leading-relaxed">
+							Open for high-impact architectural challenges and global digital delivery. 
+							If you are building complex, multi-user ecosystems, let's engineer the foundation together.
+						</p>
+						<a
+							href="mailto:leandrovianacodes@gmail.com"
+							className="bg-white text-black px-12 py-5 rounded-2xl font-black transition-all hover:bg-[#ffb700] hover:scale-105 active:scale-95 shadow-2xl uppercase tracking-[0.2em] text-[11px] inline-block"
+						>
+							Synchronize Now
+						</a>
+					</div>
+				</section>
+			</main>
+
+			<footer className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-border-default text-center text-xs text-fg-subtle">
+				<p>© {new Date().getFullYear()} leandrocodes. Built with React & Tailwind.</p>
+			</footer>
 		</div>
 	);
 }
+
 
 export default App;
