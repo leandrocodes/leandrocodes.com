@@ -19,7 +19,7 @@ const Home = () => {
 							className="w-full h-full object-cover scale-150 rounded-full grayscale-[0.3] hover:grayscale-0 transition-all duration-700"
 						/>
 					</div>
-					<div className="absolute bottom-4 right-4 glass-card px-3 py-1 flex items-center gap-2 shadow-lg">
+					<div className="absolute bottom-4 right-4 glass-card bg-white/10 px-3 py-1 flex items-center gap-2 shadow-lg">
 						<div className="w-2 h-2 rounded-full bg-[#ffb700] animate-pulse-gold" />
 						<span className="text-[10px] font-bold tracking-widest uppercase text-white/70">
 							Online
@@ -73,7 +73,7 @@ const Home = () => {
 			{/* 2026 Bento Diagnostics Panel */}
 			<div className="grid grid-cols-1 md:grid-cols-4 gap-6 pt-12 border-t border-white/5">
 				{/* Main Architectural Highlight (Spans 2 columns) */}
-				<div className="md:col-span-2 glass-card p-8 group relative overflow-hidden border border-white/5 hover:border-[#ffb700]/30 transition-all snake-border-container">
+				<div className="md:col-span-2 glass-card p-6 md:p-8 group relative overflow-hidden border border-white/5 hover:border-[#ffb700]/30 transition-all snake-border-container">
 					<svg className="snake-border-svg"><title>Border Trail</title><rect x="0" y="0" width="100%" height="100%" rx="16" fill="none" pathLength="1" className="snake-path" /></svg>
 					<div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
 						<Cpu size={120} weight="thin" />
@@ -95,7 +95,7 @@ const Home = () => {
 					download="Leandro-Viana-Resume.pdf"
 					target="_blank"
 					rel="noopener noreferrer"
-					className="glass-card p-8 flex flex-col justify-between group text-left border border-white/5 hover:border-[#ffb700]/30 transition-all relative overflow-hidden snake-border-container cursor-pointer"
+					className="glass-card p-6 md:p-8 flex flex-col justify-between group text-left border border-white/5 hover:border-[#ffb700]/30 transition-all relative overflow-hidden snake-border-container cursor-pointer"
 				>
 					<svg className="snake-border-svg"><title>Border Trail</title><rect x="0" y="0" width="100%" height="100%" rx="16" fill="none" pathLength="1" className="snake-path" /></svg>
 					<div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
@@ -113,7 +113,7 @@ const Home = () => {
 					</div>
 				</a>
 
-				<div className="glass-card p-8 flex flex-col justify-between group bg-white/[0.01] border border-white/5 hover:border-[#ffb700]/30 transition-all relative overflow-hidden snake-border-container">
+				<div className="glass-card p-6 md:p-8 flex flex-col justify-between group bg-white/[0.01] border border-white/5 hover:border-[#ffb700]/30 transition-all relative overflow-hidden snake-border-container">
 					<svg className="snake-border-svg"><title>Border Trail</title><rect x="0" y="0" width="100%" height="100%" rx="16" fill="none" pathLength="1" className="snake-path" /></svg>
 					<div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
 						<ChartBar size={60} weight="thin" />
