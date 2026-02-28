@@ -4,11 +4,14 @@ import './index.css';
 import App from './App.tsx';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ReactLenis } from 'lenis/react';
 
 gsap.registerPlugin(ScrollTrigger);
 
 createRoot(document.getElementById('root')!).render(
 	<StrictMode>
-	       	<App />
+		<ReactLenis root>
+			<App />
+		</ReactLenis>
 	</StrictMode>,
 );

@@ -100,7 +100,7 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
 				wordElements,
 				{ opacity: baseOpacity, willChange: 'opacity' },
 				{
-					ease: 'power2.out',
+					ease: 'expo.out',
 					opacity: 1,
 					stagger: {
 						each: 0.03,
@@ -122,7 +122,7 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
 					wordElements,
 					{ filter: `blur(${blurStrength}px)` },
 					{
-						ease: 'power2.out',
+						ease: 'expo.out',
 						filter: 'blur(0px)',
 						stagger: {
 							each: 0.03,
@@ -147,7 +147,7 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
 					filter: enableBlur ? `blur(${blurStrength}px)` : 'none',
 				},
 				{
-					ease: 'power2.out',
+					ease: 'expo.out',
 					opacity: 1,
 					filter: 'blur(0px)',
 					scrollTrigger: {

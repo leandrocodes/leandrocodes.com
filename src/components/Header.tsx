@@ -1,5 +1,6 @@
 import { Envelope, GithubLogo, LinkedinLogo } from '@phosphor-icons/react';
 import { useState } from 'react';
+import MagneticButton from './MagneticButton';
 
 const Header = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -50,14 +51,15 @@ const Header = () => {
 						<div className="hidden md:block">
 							<div className="flex items-center space-x-6">
 								{navItems.map((item) => (
-									<a
-										key={item.name}
-										href={item.href}
-										className="text-white/40 hover:text-[#ffb700] text-[10px] font-bold uppercase tracking-[0.2em] transition-all duration-300 relative group/nav"
-									>
-										{item.name}
-										<span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ffb700] transition-all duration-300 group-hover/nav:w-full shadow-[0_0_8px_#ffb700]" />
-									</a>
+									<MagneticButton key={item.name} pullFactor={0.3}>
+										<a
+											href={item.href}
+											className="text-white/40 hover:text-[#ffb700] text-[10px] font-bold uppercase tracking-[0.2em] transition-all duration-300 relative group/nav inline-block"
+										>
+											{item.name}
+											<span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ffb700] transition-all duration-300 group-hover/nav:w-full shadow-[0_0_8px_#ffb700]" />
+										</a>
+									</MagneticButton>
 								))}
 							</div>
 						</div>
@@ -66,16 +68,17 @@ const Header = () => {
 					<div className="flex items-center gap-6">
 						<div className="hidden sm:flex items-center space-x-4">
 							{socialLinks.map((social) => (
-								<a
-									key={social.label}
-									href={social.href}
-									target="_blank"
-									rel="noopener noreferrer"
-									className="text-white/30 hover:text-[#ffb700] p-2 transition-all duration-300"
-									aria-label={social.label}
-								>
-									<social.icon size={20} weight="light" />
-								</a>
+								<MagneticButton key={social.label} pullFactor={0.5}>
+									<a
+										href={social.href}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="text-white/30 hover:text-[#ffb700] p-2 transition-all duration-300 inline-block"
+										aria-label={social.label}
+									>
+										<social.icon size={20} weight="light" />
+									</a>
+								</MagneticButton>
 							))}
 						</div>
 
@@ -88,16 +91,19 @@ const Header = () => {
 							>
 								<div className="relative w-6 h-6">
 									<div
-										className={`absolute top-1/2 left-1/2 w-5 h-0.5 bg-current transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ${isMenuOpen ? 'rotate-45' : '-translate-y-1.5'
-											}`}
+										className={`absolute top-1/2 left-1/2 w-5 h-0.5 bg-current transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ${
+											isMenuOpen ? 'rotate-45' : '-translate-y-1.5'
+										}`}
 									/>
 									<div
-										className={`absolute top-1/2 left-1/2 w-5 h-0.5 bg-current transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''
-											}`}
+										className={`absolute top-1/2 left-1/2 w-5 h-0.5 bg-current transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ${
+											isMenuOpen ? 'opacity-0' : ''
+										}`}
 									/>
 									<div
-										className={`absolute top-1/2 left-1/2 w-5 h-0.5 bg-current transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ${isMenuOpen ? '-rotate-45' : 'translate-y-1.5'
-											}`}
+										className={`absolute top-1/2 left-1/2 w-5 h-0.5 bg-current transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ${
+											isMenuOpen ? '-rotate-45' : 'translate-y-1.5'
+										}`}
 									/>
 								</div>
 							</button>
@@ -107,8 +113,9 @@ const Header = () => {
 
 				{/* Mobile menu */}
 				<div
-					className={`md:hidden transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden ${isMenuOpen ? 'max-h-screen opacity-100 py-8' : 'max-h-0 opacity-0'
-						}`}
+					className={`md:hidden transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden ${
+						isMenuOpen ? 'max-h-screen opacity-100 py-8' : 'max-h-0 opacity-0'
+					}`}
 				>
 					<div className="space-y-6 px-4">
 						{navItems.map((item) => (
