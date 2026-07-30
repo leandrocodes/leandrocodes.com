@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { DownloadIcon, Cpu, Globe, ChartBar } from '@phosphor-icons/react';
-import pixelImage from '../assets/pixel.jpg';
+import pixelImage from '../assets/pixel.jpeg';
 import resumePDF from '../assets/Leandro Viana - Resume CV.pdf';
 import TextType from './TextType';
 import MagneticButton from './MagneticButton';
@@ -33,33 +33,71 @@ const Home = () => {
 			className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16"
 		>
 			<div className="flex flex-col lg:flex-row items-center gap-12 mb-16">
-				{/* Portrait with Glass Depth */}
-				<div className="relative shrink-0 animate-float">
-					<div className="w-48 h-48 sm:w-64 sm:h-64 rounded-full overflow-hidden border border-white/10 shadow-2xl glass-card p-1">
-						<img
-							src={pixelImage}
-							alt="Leandro Viana"
-							className="w-full h-full object-cover scale-150 rounded-full grayscale-[0.3] hover:grayscale-0 transition-all duration-700"
-						/>
-					</div>
-					<div className="absolute bottom-4 right-4 glass-card bg-white/10 px-3 py-1 flex items-center gap-2 shadow-lg">
-						<div className="w-2 h-2 rounded-full bg-[#ffb700] animate-pulse-gold" />
-						<span className="text-[10px] font-bold tracking-widest uppercase text-white/70">
-							Online
-						</span>
+				{/* Portrait Frame - Physical Braun T3 Transistor Radio Aesthetic */}
+				<div className="relative shrink-0">
+					{/* Braun T3 Cabinet Shell */}
+					<div className="w-56 sm:w-72 bg-[#2a2a2a] rounded-3xl p-5 border-4 border-[#1e1e1e] shadow-[0_20px_50px_rgba(0,0,0,0.6),inset_0_2px_4px_rgba(255,255,255,0.1)] relative overflow-hidden group">
+						{/* Photo Container (Starts 100% Grayscale B&W, goes to Full Color on hover) */}
+						<div className="relative w-full aspect-square rounded-2xl overflow-hidden border-2 border-[#1e1e1e] bg-[#1e1e1e]">
+							<img
+								src={pixelImage}
+								alt="Leandro Viana"
+								className="w-full h-full object-cover scale-100 grayscale group-hover:grayscale-0 transition-all duration-700 opacity-90 group-hover:opacity-100"
+							/>
+						</div>
+
+						{/* Braun T3 Rotary Tuning Knob & Speaker Hole Array at Bottom */}
+						<div className="mt-5 flex items-center justify-between px-1">
+							{/* Speaker Hole Array Accent (Restored) */}
+							<div className="grid grid-cols-4 gap-1.5">
+								{Array.from({ length: 12 }).map((_, i) => (
+									<div
+										key={i}
+										className="w-1.5 h-1.5 rounded-full bg-[#1e1e1e] shadow-[inset_0_1px_2px_rgba(0,0,0,0.8)] border border-[#F2F2F2]/5"
+									/>
+								))}
+							</div>
+
+						{/* Braun T3 Mechanical Tuning Dial Assembly */}
+						<div className="relative flex items-center justify-center pt-4 pb-2">
+							{/* Outer Circular Scale Ring Area */}
+							<div className="relative w-32 h-28 flex items-center justify-center">
+								{/* Scale Numbers printed around the dial ring (0% at left, 100% at top-center) */}
+								<span className="absolute left-1 top-1/2 -translate-y-1/2 font-mono text-[10px] text-[#F2F2F2]/60">
+									0%
+								</span>
+								<span className="absolute top-0 left-1/2 -translate-x-1/2 font-mono text-[10px] text-[#56BF99] font-bold">
+									100%
+								</span>
+
+								{/* Physical Rotating Wheel Chassis */}
+								<div className="w-20 h-20 rounded-full bg-[#2a2a2a] border-2 border-[#F2F2F2]/20 shadow-[0_6px_16px_rgba(0,0,0,0.6),inset_0_1px_3px_rgba(255,255,255,0.2)] flex items-center justify-center -rotate-90 group-hover:rotate-0 transition-transform duration-700 relative">
+									{/* Tuning Needle Pointer Arrow (Starts at 0% left [-90deg], rotates to 100% top [0deg]) */}
+									<div className="absolute top-1 left-1/2 -translate-x-1/2 z-20">
+										<div className="w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-b-[7px] border-b-[#D96459]" />
+									</div>
+
+									{/* Center Dimple Cap with Two Dots */}
+									<div className="w-7 h-7 rounded-full bg-[#202020] border border-[#F2F2F2]/20 flex items-center justify-center gap-1 shadow-inner">
+										<div className="w-1 h-1 rounded-full bg-[#F2F2F2]/60" />
+									</div>
+								</div>
+							</div>
+						</div>
+						</div>
 					</div>
 				</div>
 
 				{/* Hero Text */}
 				<div className="flex-1 text-center lg:text-left space-y-6">
 					<div>
-						<h1 className="text-4xl sm:text-7xl font-black text-white tracking-tighter mb-2 leading-none">
+						<h1 className="text-4xl sm:text-7xl font-mono font-black text-[#F2F2F2] tracking-tight mb-2 leading-none">
 							LEANDRO{' '}
-							<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffb700] to-white/50">
+							<span className="text-[#56BF99]">
 								VIANA
 							</span>
 						</h1>
-						<div className="text-xl sm:text-2xl font-mono text-[#ffb700] uppercase tracking-[0.25em]">
+						<div className="text-xl sm:text-2xl font-mono font-bold text-[#EBCA5E] uppercase tracking-[0.2em] bg-[#F2F2F2]/5 px-3 py-1.5 rounded-lg inline-block border border-[#F2F2F2]/10">
 							<TextType
 								text={[
 									'Senior Software Engineer',
@@ -72,10 +110,10 @@ const Home = () => {
 							/>
 						</div>
 					</div>
-					<p className="text-lg text-white/60 max-w-2xl leading-relaxed font-light">
+					<p className="text-base sm:text-lg text-[#F2F2F2]/80 max-w-2xl leading-relaxed font-sans">
 						Architecting resilient digital ecosystems powered by
-						<span className="text-white font-medium"> microfrontends</span> and
-						<span className="text-[#ffb700]"> server driven ui</span>.
+						<span className="text-[#56BF99] font-semibold"> microfrontends</span> and
+						<span className="text-[#EBCA5E] font-semibold"> server driven ui</span>.
 						Engineering high-scale, modular platforms from Brazil for a
 						global-first technical landscape.
 					</p>
@@ -83,7 +121,7 @@ const Home = () => {
 						<MagneticButton>
 							<a
 								href="mailto:leandrovianacodes@gmail.com"
-								className="bg-white text-black px-8 py-3 rounded-xl font-bold transition-all hover:bg-[#ffb700] shadow-xl shadow-white/5 inline-block"
+								className="bg-[#56BF99] text-[#262626] border-2 border-[#262626] px-8 py-3.5 rounded-full font-mono font-bold transition-all hover:bg-[#F2F2F2] shadow-lg inline-block uppercase text-xs tracking-wider"
 							>
 								start a new project
 							</a>
@@ -94,25 +132,12 @@ const Home = () => {
 								download="Leandro-Viana-Resume.pdf"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="glass-card px-8 py-3 rounded-xl font-bold hover:bg-white/5 transition-all text-white/90 flex items-center gap-2 group snake-border-container cursor-pointer inline-flex"
+								className="bg-[#262626] border border-[#F2F2F2]/20 px-8 py-3.5 rounded-full font-mono font-bold hover:border-[#56BF99] transition-all text-[#F2F2F2] flex items-center gap-2 cursor-pointer inline-flex uppercase text-xs tracking-wider"
 							>
-								<svg className="snake-border-svg">
-									<title>Border Trail</title>
-									<rect
-										x="0"
-										y="0"
-										width="100%"
-										height="100%"
-										rx="12"
-										fill="none"
-										pathLength="1"
-										className="snake-path"
-									/>
-								</svg>
 								<DownloadIcon
-									size={20}
+									size={18}
 									weight="bold"
-									className="text-[#ffb700] group-hover:animate-bounce"
+									className="text-[#56BF99]"
 								/>
 								Download CV
 							</a>
@@ -121,107 +146,68 @@ const Home = () => {
 				</div>
 			</div>
 
-			{/* 2026 Bento Diagnostics Panel */}
-			<div className="grid grid-cols-1 md:grid-cols-4 gap-6 pt-12 border-t border-white/5">
-				{/* Main Architectural Highlight (Spans 2 columns) */}
-				<div className="md:col-span-2 glass-card p-6 md:p-8 group relative overflow-hidden border border-white/5 hover:border-[#ffb700]/30 transition-all snake-border-container">
-					<svg className="snake-border-svg">
-						<title>Border Trail</title>
-						<rect
-							x="0"
-							y="0"
-							width="100%"
-							height="100%"
-							rx="16"
-							fill="none"
-							pathLength="1"
-							className="snake-path"
-						/>
-					</svg>
-					<div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
-						<Cpu size={120} weight="thin" />
+			{/* Braun T3 Radio Tuning Panel / Bento Cards */}
+			<div className="grid grid-cols-1 md:grid-cols-4 gap-6 pt-6 border-t border-[#F2F2F2]/10">
+				{/* Main Architectural Highlight */}
+				<div className="md:col-span-2 bg-[#262626] p-6 md:p-8 rounded-2xl border-2 border-[#F2F2F2]/10 hover:border-[#56BF99] transition-all relative overflow-hidden shadow-lg group">
+					<div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+						<Cpu size={100} weight="duotone" className="text-[#56BF99]" />
 					</div>
-					<h3 className="text-[10px] font-bold text-[#ffb700] uppercase tracking-[0.4em] mb-6">
+					<h3 className="text-[11px] font-mono font-bold text-[#56BF99] uppercase tracking-[0.3em] mb-4">
 						Current Stack Focus
 					</h3>
-					<p className="text-3xl font-black text-white leading-tight mb-8">
+					<p className="text-2xl md:text-3xl font-mono font-bold text-[#F2F2F2] leading-tight mb-6">
 						ORCHESTRATING <br />
-						<span className="text-white/40">SDUI & MICROFRONTENDS</span>
+						<span className="text-[#EBCA5E]">SDUI & MICROFRONTENDS</span>
 					</p>
-					<div className="flex gap-3">
-						<span className="px-3 py-1.5 bg-white/5 rounded-lg text-[10px] font-bold text-white/40 border border-white/10 uppercase tracking-wider">
+					<div className="flex flex-wrap gap-2">
+						<span className="px-3 py-1 bg-[#F2F2F2]/10 rounded-full text-[10px] font-mono font-bold text-[#F2F2F2]/80 border border-[#F2F2F2]/15 uppercase tracking-wider">
 							Enterprise Scale
 						</span>
-						<span className="px-3 py-1.5 bg-white/5 rounded-lg text-[10px] font-bold text-white/40 border border-white/10 uppercase tracking-wider">
+						<span className="px-3 py-1 bg-[#F2F2F2]/10 rounded-full text-[10px] font-mono font-bold text-[#F2F2F2]/80 border border-[#F2F2F2]/15 uppercase tracking-wider">
 							Modular Core
 						</span>
 					</div>
 				</div>
 
-				{/* Global Reach (1 Column) */}
+				{/* Global Reach */}
 				<a
 					href={resumePDF}
 					download="Leandro-Viana-Resume.pdf"
 					target="_blank"
 					rel="noopener noreferrer"
-					className="glass-card p-6 md:p-8 flex flex-col justify-between group text-left border border-white/5 hover:border-[#ffb700]/30 transition-all relative overflow-hidden snake-border-container cursor-pointer"
+					className="bg-[#262626] p-6 md:p-8 rounded-2xl border border-[#F2F2F2]/10 hover:border-[#EBCA5E] transition-all relative overflow-hidden shadow-lg flex flex-col justify-between group cursor-pointer"
 				>
-					<svg className="snake-border-svg">
-						<title>Border Trail</title>
-						<rect
-							x="0"
-							y="0"
-							width="100%"
-							height="100%"
-							rx="16"
-							fill="none"
-							pathLength="1"
-							className="snake-path"
-						/>
-					</svg>
-					<div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
-						<Globe size={60} weight="thin" />
+					<div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+						<Globe size={60} weight="duotone" className="text-[#EBCA5E]" />
 					</div>
-					<h3 className="text-[10px] font-bold text-white/30 uppercase tracking-[0.2em] relative z-10">
+					<h3 className="text-[11px] font-mono font-bold text-[#F2F2F2]/40 uppercase tracking-[0.2em] relative z-10">
 						Reach
 					</h3>
-					<div className="relative z-10">
-						<p className="text-4xl font-black text-white mb-2">GLOBAL</p>
+					<div className="relative z-10 mt-6">
+						<p className="text-3xl font-mono font-black text-[#F2F2F2] mb-2">GLOBAL</p>
 						<div className="flex items-center gap-2">
-							<div className="p-1 rounded bg-[#ffb700]/10 text-[#ffb700]">
+							<div className="p-1 rounded-full bg-[#56BF99]/20 text-[#56BF99]">
 								<DownloadIcon size={12} weight="bold" />
 							</div>
-							<p className="text-[10px] font-bold text-white/40 uppercase tracking-widest">
+							<p className="text-[10px] font-mono font-bold text-[#F2F2F2]/60 uppercase tracking-widest">
 								Worldwide Teams
 							</p>
 						</div>
 					</div>
 				</a>
 
-				<div className="glass-card p-6 md:p-8 flex flex-col justify-between group bg-white/[0.01] border border-white/5 hover:border-[#ffb700]/30 transition-all relative overflow-hidden snake-border-container">
-					<svg className="snake-border-svg">
-						<title>Border Trail</title>
-						<rect
-							x="0"
-							y="0"
-							width="100%"
-							height="100%"
-							rx="16"
-							fill="none"
-							pathLength="1"
-							className="snake-path"
-						/>
-					</svg>
-					<div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
-						<ChartBar size={60} weight="thin" />
+				<div className="bg-[#262626] p-6 md:p-8 rounded-2xl border border-[#F2F2F2]/10 hover:border-[#D96459] transition-all relative overflow-hidden shadow-lg flex flex-col justify-between group">
+					<div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+						<ChartBar size={60} weight="duotone" className="text-[#D96459]" />
 					</div>
-					<h3 className="text-[10px] font-bold text-white/30 uppercase tracking-[0.2em] relative z-10">
+					<h3 className="text-[11px] font-mono font-bold text-[#F2F2F2]/40 uppercase tracking-[0.2em] relative z-10">
 						Impact
 					</h3>
-					<div className="relative z-10">
-						<p className="text-2xl font-black text-white mb-1">LARGESCALE</p>
-						<p className="text-[10px] font-bold text-[#ffb700] uppercase tracking-widest flex items-center gap-2">
-							<span className="w-1.5 h-1.5 rounded-full bg-[#ffb700] animate-pulse-gold" />
+					<div className="relative z-10 mt-6">
+						<p className="text-2xl font-mono font-black text-[#F2F2F2] mb-1">LARGESCALE</p>
+						<p className="text-[10px] font-mono font-bold text-[#D96459] uppercase tracking-widest flex items-center gap-2">
+							<span className="w-2 h-2 rounded-full bg-[#D96459] animate-pulse" />
 							High-Traffic Systems
 						</p>
 					</div>

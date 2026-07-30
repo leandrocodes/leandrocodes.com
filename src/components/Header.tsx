@@ -31,18 +31,18 @@ const Header = () => {
 	];
 
 	return (
-		<header className="fixed top-0 left-0 right-0 z-50 glass-header shadow-2xl">
+		<header className="fixed top-0 left-0 right-0 z-50 bg-[#262626]/90 backdrop-blur-md border-b border-[#F2F2F2]/10 shadow-lg">
 			<nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="flex items-center justify-between h-20">
 					<div className="flex items-center gap-12">
 						<div className="flex-shrink-0">
 							<a href="#home" className="flex items-center gap-3 group">
-								<div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-black font-black text-xl shadow-xl group-hover:bg-[#ffb700] transition-all duration-500">
+								<div className="w-10 h-10 rounded-full bg-[#56BF99] flex items-center justify-center text-[#262626] font-mono font-bold text-xl shadow-md border-2 border-[#262626] group-hover:bg-[#F2F2F2] transition-colors duration-300">
 									L
 								</div>
 								<div className="hidden sm:block">
-									<h1 className="text-xs font-black text-white uppercase tracking-[0.4em] opacity-80 group-hover:opacity-100 transition-opacity">
-										LEANDRO<span className="text-[#ffb700]">V.</span>
+									<h1 className="text-xs font-mono font-bold text-[#F2F2F2] uppercase tracking-[0.3em] opacity-90 group-hover:text-[#56BF99] transition-colors">
+										LEANDRO<span className="text-[#56BF99]">.V</span>
 									</h1>
 								</div>
 							</a>
@@ -54,10 +54,10 @@ const Header = () => {
 									<MagneticButton key={item.name} pullFactor={0.3}>
 										<a
 											href={item.href}
-											className="text-white/40 hover:text-[#ffb700] text-[10px] font-bold uppercase tracking-[0.2em] transition-all duration-300 relative group/nav inline-block"
+											className="text-[#F2F2F2]/60 hover:text-[#56BF99] text-[11px] font-mono font-bold uppercase tracking-[0.2em] transition-all duration-300 relative group/nav inline-block py-1 px-2 rounded-md hover:bg-[#F2F2F2]/5"
 										>
 											{item.name}
-											<span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ffb700] transition-all duration-300 group-hover/nav:w-full shadow-[0_0_8px_#ffb700]" />
+											<span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-1 bg-[#56BF99] rounded-full transition-all duration-300 group-hover/nav:w-3/4" />
 										</a>
 									</MagneticButton>
 								))}
@@ -66,17 +66,17 @@ const Header = () => {
 					</div>
 
 					<div className="flex items-center gap-6">
-						<div className="hidden sm:flex items-center space-x-4">
+						<div className="hidden sm:flex items-center space-x-3">
 							{socialLinks.map((social) => (
 								<MagneticButton key={social.label} pullFactor={0.5}>
 									<a
 										href={social.href}
 										target="_blank"
 										rel="noopener noreferrer"
-										className="text-white/30 hover:text-[#ffb700] p-2 transition-all duration-300 inline-block"
+										className="text-[#F2F2F2]/60 hover:text-[#56BF99] p-2 transition-all duration-300 inline-block bg-[#F2F2F2]/5 rounded-lg border border-[#F2F2F2]/10 hover:border-[#56BF99]/50"
 										aria-label={social.label}
 									>
-										<social.icon size={20} weight="light" />
+										<social.icon size={18} weight="bold" />
 									</a>
 								</MagneticButton>
 							))}
@@ -86,7 +86,7 @@ const Header = () => {
 							<button
 								type="button"
 								onClick={() => setIsMenuOpen(!isMenuOpen)}
-								className="text-white/60 hover:text-[#ffb700] p-2 transition-all duration-200"
+								className="text-[#F2F2F2]/70 hover:text-[#56BF99] p-2 transition-all duration-200"
 								aria-label="Toggle menu"
 							>
 								<div className="relative w-6 h-6">
@@ -113,33 +113,33 @@ const Header = () => {
 
 				{/* Mobile menu */}
 				<div
-					className={`md:hidden transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden ${
-						isMenuOpen ? 'max-h-screen opacity-100 py-8' : 'max-h-0 opacity-0'
+					className={`md:hidden transition-all duration-500 ease-in-out overflow-hidden ${
+						isMenuOpen ? 'max-h-screen opacity-100 py-6 border-t border-[#F2F2F2]/10' : 'max-h-0 opacity-0'
 					}`}
 				>
-					<div className="space-y-6 px-4">
+					<div className="space-y-4 px-4">
 						{navItems.map((item) => (
 							<a
 								key={item.name}
 								href={item.href}
-								className="text-white/40 hover:text-[#ffb700] block text-2xl font-black uppercase tracking-tighter transition-all"
+								className="text-[#F2F2F2]/70 hover:text-[#56BF99] block text-xl font-mono font-bold uppercase tracking-wider transition-all"
 								onClick={() => setIsMenuOpen(false)}
 							>
 								{item.name}
 							</a>
 						))}
 					</div>
-					<div className="flex items-center gap-8 border-t border-white/5 mt-12 pt-12 px-4 text-white/30">
+					<div className="flex items-center gap-6 border-t border-[#F2F2F2]/10 mt-6 pt-6 px-4 text-[#F2F2F2]/50">
 						{socialLinks.map((social) => (
 							<a
 								key={social.label}
 								href={social.href}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="hover:text-white transition-all duration-300"
+								className="hover:text-[#56BF99] transition-all duration-300"
 								aria-label={social.label}
 							>
-								<social.icon size={28} weight="light" />
+								<social.icon size={24} weight="bold" />
 							</a>
 						))}
 					</div>
