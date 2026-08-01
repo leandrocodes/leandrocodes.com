@@ -31,12 +31,16 @@ const Header = () => {
 	];
 
 	return (
-		<header className="fixed top-0 left-0 right-0 z-50 bg-[#262626]/90 backdrop-blur-md border-b border-[#F2F2F2]/10 shadow-lg">
+		<header className="fixed top-0 left-0 right-0 z-50 bg-[#262626]/95 backdrop-blur-lg border-b border-[#F2F2F2]/10 shadow-lg">
 			<nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="flex items-center justify-between h-20">
 					<div className="flex items-center gap-12">
 						<div className="flex-shrink-0">
-							<a href="#home" className="flex items-center gap-3 group">
+							<a
+								href="#home"
+								onClick={() => setIsMenuOpen(false)}
+								className="flex items-center gap-3 group active:opacity-80 transition-opacity"
+							>
 								<div className="w-10 h-10 rounded-full bg-[#56BF99] flex items-center justify-center text-[#262626] font-mono font-bold text-xl shadow-md border-2 border-[#262626] group-hover:bg-[#F2F2F2] transition-colors duration-300">
 									L
 								</div>
@@ -86,7 +90,7 @@ const Header = () => {
 							<button
 								type="button"
 								onClick={() => setIsMenuOpen(!isMenuOpen)}
-								className="text-[#F2F2F2]/70 hover:text-[#56BF99] p-2 transition-all duration-200"
+								className="text-[#F2F2F2]/80 hover:text-[#56BF99] p-3 -mr-2 transition-all duration-200 focus:outline-none"
 								aria-label="Toggle menu"
 							>
 								<div className="relative w-6 h-6">
@@ -113,33 +117,34 @@ const Header = () => {
 
 				{/* Mobile menu */}
 				<div
-					className={`md:hidden transition-all duration-500 ease-in-out overflow-hidden ${
-						isMenuOpen ? 'max-h-screen opacity-100 py-6 border-t border-[#F2F2F2]/10' : 'max-h-0 opacity-0'
+					className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${
+						isMenuOpen ? 'max-h-screen opacity-100 py-6 border-t border-[#F2F2F2]/10 bg-[#262626]/95 backdrop-blur-xl' : 'max-h-0 opacity-0 py-0'
 					}`}
 				>
-					<div className="space-y-4 px-4">
+					<div className="space-y-2 px-4">
 						{navItems.map((item) => (
 							<a
 								key={item.name}
 								href={item.href}
-								className="text-[#F2F2F2]/70 hover:text-[#56BF99] block text-xl font-mono font-bold uppercase tracking-wider transition-all"
+								className="text-[#F2F2F2]/80 hover:text-[#56BF99] active:text-[#56BF99] active:bg-[#F2F2F2]/5 block py-3 px-4 rounded-xl text-lg font-mono font-bold uppercase tracking-wider transition-all"
 								onClick={() => setIsMenuOpen(false)}
 							>
 								{item.name}
 							</a>
 						))}
 					</div>
-					<div className="flex items-center gap-6 border-t border-[#F2F2F2]/10 mt-6 pt-6 px-4 text-[#F2F2F2]/50">
+					<div className="flex items-center gap-4 border-t border-[#F2F2F2]/10 mt-6 pt-6 px-4 text-[#F2F2F2]/70">
 						{socialLinks.map((social) => (
 							<a
 								key={social.label}
 								href={social.href}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="hover:text-[#56BF99] transition-all duration-300"
+								className="p-3 bg-[#F2F2F2]/5 rounded-xl border border-[#F2F2F2]/10 active:border-[#56BF99] hover:text-[#56BF99] transition-all duration-300 flex items-center justify-center"
 								aria-label={social.label}
+								onClick={() => setIsMenuOpen(false)}
 							>
-								<social.icon size={24} weight="bold" />
+								<social.icon size={20} weight="bold" />
 							</a>
 						))}
 					</div>

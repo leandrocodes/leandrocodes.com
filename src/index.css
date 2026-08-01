@@ -5,12 +5,15 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
   }
 
   body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     background-color: var(--color-canvas-default);
     color: var(--color-fg-default);
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
   }
 
   /* Headers */
@@ -118,10 +121,19 @@
     transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
   }
 
-  .glass-card:hover {
-    background: rgba(242, 242, 242, 0.07);
-    border-color: rgba(235, 202, 94, 0.4);
-    transform: translateY(-2px);
+  @media (hover: hover) and (pointer: fine) {
+    .glass-card:hover {
+      background: rgba(242, 242, 242, 0.07);
+      border-color: rgba(235, 202, 94, 0.4);
+      transform: translateY(-2px);
+    }
+  }
+
+  @media (hover: none) {
+    .glass-card:active {
+      background: rgba(242, 242, 242, 0.08);
+      transform: scale(0.99);
+    }
   }
 
   .glass-header {
@@ -171,8 +183,10 @@
     transition: opacity 0.4s ease;
   }
 
-  .snake-border-container:hover .snake-border-svg {
-    opacity: 1;
+  @media (hover: hover) and (pointer: fine) {
+    .snake-border-container:hover .snake-border-svg {
+      opacity: 1;
+    }
   }
 
   .snake-path {
@@ -193,5 +207,3 @@
     --snake-color: #56BF99;
   }
 }
-
-

@@ -72,26 +72,32 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
 		const el = containerRef.current;
 		if (!el) return;
 
+		const isMobile = window.innerWidth < 768 || window.matchMedia('(hover: none)').matches;
+		const effectiveRotation = isMobile ? 0 : baseRotation;
+		const effectiveEnableBlur = isMobile ? false : enableBlur;
+
 		const scroller =
 			scrollContainerRef && scrollContainerRef.current
 				? scrollContainerRef.current
 				: window;
 
-		gsap.fromTo(
-			el,
-			{ transformOrigin: '0% 50%', rotate: baseRotation },
-			{
-				ease: 'power1.out',
-				rotate: 0,
-				scrollTrigger: {
-					trigger: el,
-					scroller,
-					start: 'top bottom',
-					end: rotationEnd,
-					scrub: 1,
+		if (effectiveRotation !== 0) {
+			gsap.fromTo(
+				el,
+				{ transformOrigin: '0% 50%', rotate: effectiveRotation },
+				{
+					ease: 'power1.out',
+					rotate: 0,
+					scrollTrigger: {
+						trigger: el,
+						scroller,
+						start: 'top bottom',
+						end: rotationEnd,
+						scrub: 1,
+					},
 				},
-			},
-		);
+			);
+		}
 
 		const wordElements = el.querySelectorAll<HTMLElement>('.word');
 
@@ -117,7 +123,7 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
 				},
 			);
 
-			if (enableBlur) {
+			if (effectiveEnableBlur) {
 				gsap.fromTo(
 					wordElements,
 					{ filter: `blur(${blurStrength}px)` },
@@ -144,7 +150,7 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
 				el,
 				{
 					opacity: baseOpacity,
-					filter: enableBlur ? `blur(${blurStrength}px)` : 'none',
+					filter: effectiveEnableBlur ? `blur(${blurStrength}px)` : 'none',
 				},
 				{
 					ease: 'expo.out',

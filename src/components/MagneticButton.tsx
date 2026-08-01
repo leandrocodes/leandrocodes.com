@@ -17,6 +17,10 @@ const MagneticButton = ({
 		const element = magneticRef.current;
 		if (!element) return;
 
+		// Check if device supports hover and fine pointer (desktop)
+		const isHoverable = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+		if (!isHoverable) return;
+
 		const xTo = gsap.quickTo(element, 'x', {
 			duration: 1,
 			ease: 'elastic.out(1, 0.3)',
